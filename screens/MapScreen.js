@@ -24,9 +24,10 @@ const MapScreen = (props) => {
 
   const savePickedLocationHandler = useCallback(
     () => {
-      props.navigation.goBack()
+      if (!selectedLocation) return;
+      props.navigation.navigate('NewPlace', { pickedLocation: selectedLocation })
     },
-    []
+    [selectedLocation]
   )
 
   useEffect(() => {
