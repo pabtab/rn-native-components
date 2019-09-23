@@ -5,6 +5,7 @@ import Colors from '../constants/Colors'
 
 import * as placesActions from '../store/placesAction'
 import ImgPicker from '../components/ImgPicker'
+import LocationPicker from '../components/LocationPicker'
 
 const NewPlaceScreen = (props) => {
   const [titleValue, setTitleValue] = useState('')
@@ -31,6 +32,7 @@ const NewPlaceScreen = (props) => {
         <Text style={styles.label}>new place</Text>
         <TextInput style={styles.textInput} onChangeText={titleChangeHandler} value={titleValue}/>
         <ImgPicker onImageTaken={imageTakenHandler}/>
+        <LocationPicker navigation={props.navigation} />
         <Button
           title="Save Place"
           color={Colors.primary}
