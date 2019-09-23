@@ -9,7 +9,7 @@ export default (state = initialState, { type, payload }) => {
   switch (type) {
 
   case ADD_PLACE:
-    const newPlace = new Place(new Date().toString(), payload.title)
+    const newPlace = new Place(new Date().toString(), payload.title, payload.image)
     return {
       places: state.places.concat(newPlace)
     }
