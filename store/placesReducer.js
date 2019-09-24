@@ -9,7 +9,16 @@ export default (state = initialState, { type, payload }) => {
   switch (type) {
 
   case ADD_PLACE:
-    const newPlace = new Place(payload.id, payload.title, payload.image)
+    const newPlace = new Place(
+      payload.id,
+      payload.title,
+      payload.image,
+      payload.address,
+      payload.coords.lat,
+      payload.coords.lng
+    )
+
+    console.log(newPlace)
     return {
       places: state.places.concat(newPlace)
     }
@@ -19,7 +28,10 @@ export default (state = initialState, { type, payload }) => {
       places: payload.map(pl => new Place(
         pl.id.toString(),
         pl.title,
-        pl.imageUri
+        pl.imageUri,
+        pl.address,
+        pl.coords.lat,
+        pl.coords.lng
       ))
     }
 
