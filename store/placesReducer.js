@@ -17,8 +17,7 @@ export default (state = initialState, { type, payload }) => {
       payload.coords.lat,
       payload.coords.lng
     )
-
-    console.log(newPlace)
+    
     return {
       places: state.places.concat(newPlace)
     }

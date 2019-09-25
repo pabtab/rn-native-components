@@ -11,7 +11,6 @@ import { loadPlaces, actionLoadPlaces } from '../store/placesAction'
 const PlaceListScreen = (props) => {
 
   const places = useSelector(state => state.Places.places)
-  console.log(places)
   const dispatch = useDispatch();
 
   useEffect(() => {

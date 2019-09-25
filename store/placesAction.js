@@ -83,7 +83,7 @@ function* getAddress(location) {
   return resData.results[0].formatted_address
 }
 
-function* addPlaceAsync({title, image, location}) {
+function* addPlaceAsync({ action: { title, image, location } }) {
   const address = yield getAddress(location)
   const fileName = yield image.split('/').pop(); 
   const newPath = yield FileSystem.documentDirectory + fileName;
@@ -116,7 +116,7 @@ function* addPlaceAsync({title, image, location}) {
 }
 
 function* addPlace() {
-  yield takeEvery('ADD_PLACE_ASYNC', addPlaceAsync)
+  yield takeLatest('ADD_PLACE_ASYNC', addPlaceAsync)
 }
 
 function* fetchAsyncPlaces() {

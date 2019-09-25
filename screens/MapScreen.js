@@ -7,7 +7,6 @@ const MapScreen = (props) => {
   const initialLocation = props.navigation.getParam('initialLocation')
   const readonly = props.navigation.getParam('readonly')
   const [selectedLocation, setSelectedLocation] = useState(initialLocation)
-  console.log(initialLocation)
 
   const mapRegion = {
     latitude: initialLocation ? initialLocation.lat : 37.78,
