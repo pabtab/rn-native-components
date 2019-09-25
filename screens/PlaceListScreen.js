@@ -4,17 +4,19 @@ import {useSelector, useDispatch} from 'react-redux'
 import {HeaderButtons, Item} from 'react-navigation-header-buttons'
 import CustomHeaderButton from '../components/CustomHeaderButton'
 import PlaceItem from '../components/PlaceItem'
-import { loadPlaces } from '../store/placesAction'
+import { loadPlaces, actionLoadPlaces } from '../store/placesAction'
 
 
 
 const PlaceListScreen = (props) => {
 
   const places = useSelector(state => state.Places.places)
+  console.log(places)
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadPlaces())
+    //dispatch(loadPlaces())
+    dispatch(actionLoadPlaces())
   }, [dispatch])
 
   return (
